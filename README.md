@@ -4,7 +4,7 @@
 ```
 npm install
 ```
-### serve with hot reload at localhost:8080
+### serve with hot reload at localhost:9080
 ```
 npm run dev
 ```
@@ -18,7 +18,7 @@ npm run lint
 ```
 ## Contribution guide
 * Fork the repository
-* `npm install` or `yarn install`
+* `npm install` 
 * Make changes
 * Open Pull Request
 
