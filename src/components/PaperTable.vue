@@ -1,54 +1,20 @@
 <template>
-  <table class="table" :class="tableClass">
-    <thead>
-    <slot name="columns">
-      <th v-for="column in columns" :key="column">{{column}}</th>
-    </slot>
-    </thead>
-    <tbody>
-    <tr v-for="(item, index) in data" :key="index">
-      <slot :row="item">
-        <td v-for="(column, index) in columns"
-            :key="index"
-            v-if="hasValue(item, column)">
-          {{itemValue(item, column)}}
-        </td>
-      </slot>
-    </tr>
-    </tbody>
-  </table>
+  <div>
+    <h2>UserList</h2>
+    <ul class="wrap">
+      <li class="item" v-for="(item, idx) in uids" :key="{idx}">
+          <span class="uid">UID: {{item.id}}</span>
+          <span class="title">title: {{item.title}}</span>
+          <span class="author">author: {{item.author}}</span>
+          <span class="modifiedDate">modifiedDate: {{item.modifiedDate}}</span>
+      </li>
+    </ul>
+  </div>
 </template>
 <script>
 export default {
-  name: 'paper-table',
   props: {
-    columns: Array,
-    data: Array,
-    type: {
-      type: String, // striped | hover
-      default: "striped"
-    },
-    title: {
-      type: String,
-      default: ""
-    },
-    subTitle: {
-      type: String,
-      default: ""
-    }
-  },
-  computed: {
-    tableClass() {
-      return `table-${this.type}`;
-    }
-  },
-  methods: {
-    hasValue(item, column) {
-      return item[column.toLowerCase()] !== "undefined";
-    },
-    itemValue(item, column) {
-      return item[column.toLowerCase()];
-    }
+    uids: {type: Array, default: () => []}
   }
 };
 </script>
