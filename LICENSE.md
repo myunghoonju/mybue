@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2021 JU_MYUNGHOON
+Copyright (c) 2017 Cristi Jora & Creative Tim (https://www.creative-tim.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
