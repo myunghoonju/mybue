@@ -18,7 +18,7 @@ npm run lint
 ```
 ## Contribution guide
 * Fork the repository
-* `npm install` or `yarn install`
+* `npm install` 
 * Make changes
 * Open Pull Request
 
