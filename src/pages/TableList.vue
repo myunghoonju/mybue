@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PaperTable :uids="uidlist"/>
+    <PaperTable :list="list"/>
   </div>
 </template>
 <script>
@@ -12,14 +12,14 @@ export default {
     PaperTable
   },data() {
     return {
-      uidlist: [],
+      list: [],
     }
   },
   mounted() {
     axios
-      .get("http://localhost:9090/getList")
+      .get("/post/list")
       .then(response =>
-        (this.uidlist.push(response.data))
+        (this.list.push(response.data))
       )
       .catch(
         alert("Error", response)

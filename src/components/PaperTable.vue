@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>UserList</h2>
+    <h2>list</h2>
     <ul class="wrap">
       <li class="item" v-for="(item, idx) in uids" :key="{idx}">
           <span class="uid">UID: {{item.id}}</span>
