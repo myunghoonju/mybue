@@ -19,11 +19,24 @@ import router from "./router/index";
 
 import PaperDashboard from "./plugins/paperDashboard";
 import "vue-notifyjs/themes/default.css";
+import {initFacebookSDK} from "./login/facebook-sdk";
+import {errorInterceptor} from "@/login/error-interceptor";
+import { fakeBackend } from "@/login/fake-backend";
+import {jwtInterceptor} from "@/login/jwt-interceptor";
 
+fakeBackend()
 Vue.use(PaperDashboard);
 
+jwtInterceptor()
+errorInterceptor()
+
+initFacebookSDK().then(startApp);
+
 /* eslint-disable no-new */
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount("#app");
+function startApp () {
+  new Vue({
+    router,
+    render: h => h(App)
+  }).$mount("#app");
+}
+

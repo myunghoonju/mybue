@@ -18,12 +18,12 @@ export default {
   mounted() {
     axios
       .get("/post/list")
-      .then(response =>
-        (this.list.push(response.data))
-      )
-      .catch(
-        alert("Error", response)
-      )
+      .then(response => {
+          this.list.push(response.data)
+      })
+      .catch(err => {
+          alert("Error", err)
+      })
   }
 }
 </script>

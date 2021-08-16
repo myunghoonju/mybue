@@ -10,6 +10,9 @@ import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Typography from "@/pages/Typography.vue";
 import TableList from "@/pages/TableList.vue";
+import Login from "@/components/Login";
+import { authFilter } from "@/login/authFilter";
+import EditAccount from "@/components/EditAccount";
 
 const routes = [
   {
@@ -54,6 +57,8 @@ const routes = [
       }
     ]
   },
+  { path: '/login', component: Login },
+  { path: '/edit', component: EditAccount, beforeEnter: authFilter },
   { path: "*", component: NotFound }
 ];
 
