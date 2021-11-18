@@ -1,25 +1,15 @@
 <template>
   <div>
-    <ul class="jobs-list">
-      <li v-for="items in this.$store.state.jobs" class="post">
-
-      </li>
-    </ul>
-    <p v-for="items in this.$store.state.jobs">
-      <a :href="items.url"> {{ items.title }} </a>
-      <small> {{ items.time_ago }}, {{ items.domain }} </small>
-    </p>
+    <list-item></list-item>
   </div>
 </template>
 
 <script>
+import ListItem from '../components/ListItem'
+
 export default {
-  created() {
-    this.$store.dispatch('FETCH_JOBS')
+  components: {
+    ListItem
   }
 }
 </script>
-
-<style scoped>
-
-</style>
