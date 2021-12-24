@@ -51,20 +51,6 @@ export default {
         return this.$store.state.jobs
       }
     }
-  },
-  created() {
-    const name = this.$route.name
-    let actionName;
-    if (name === 'news') {
-     actionName = 'FETCH_NEWS'
-    }
-    if (name === 'ask') {
-      actionName = 'FETCH_ASKS'
-    }
-    if (name === 'jobs') {
-      actionName = 'FETCH_JOBS'
-    }
-    this.$store.dispatch(actionName)
   }
 }
 </script>
