@@ -1,0 +1,3 @@
+### IMAGE TEST
+![MY IMAGE](https://myoctocat.com/assets/images/base-octocat.svg)
+
